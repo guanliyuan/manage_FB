@@ -85,7 +85,7 @@ public class UserController {
 	@WriteLog(desc="登录")
 	public String login(String userName, String password, String captcha,
 			HttpServletRequest request) {
-		/*if (userName == null || "".equals(userName.trim())) {
+		if (userName == null || "".equals(userName.trim())) {
 			return loginReturn("/login.jsp", "用户名为空", request);
 		}
 		if (password == null || "".equals(password.trim())) {
@@ -118,7 +118,7 @@ public class UserController {
 
 		} else {
 			return loginReturn("/login.jsp", "用户名或密码错误", request);
-		}*/
+		}
 		// return "buildings-list";
 		return "html/HomePage";
 	}
