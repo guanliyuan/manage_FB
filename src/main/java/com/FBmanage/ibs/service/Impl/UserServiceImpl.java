@@ -1,19 +1,31 @@
 package com.FBmanage.ibs.service.Impl;
 
+import com.FBmanage.ibs.mapper.UserMapper;
 import com.FBmanage.ibs.model.User;
 import com.FBmanage.ibs.model.UserInser;
 import com.FBmanage.ibs.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class UserServiceImpl implements UserService {
+//
+//    @Autowired
+//    private UserMapper userMapper;
+
     @Override
     public int deleteByPrimaryKey(Integer id) {
         return 0;
     }
 
+    /**
+     * 查询用户信息
+     * @param userId
+     * @return
+     */
     @Override
     public User selectUserById(Integer userId) {
+//        return userMapper.selectByPrimaryKey(userId);
         return null;
     }
 

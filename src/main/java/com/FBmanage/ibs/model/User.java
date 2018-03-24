@@ -1,134 +1,105 @@
 package com.FBmanage.ibs.model;
 
-import java.util.List;
+import java.util.Date;
 
-import com.FBmanage.ibs.model.base.Pager;
-public class User extends Pager {
+public class User {
+    private Integer id;
 
-	private Integer id;
-	private String loginName;
-	private String name;
-	private String password;
-	private String tel;
-	private String createTime;
-	private Integer state;
-	private Integer type;
-	private String email;
-	private Integer createId;
-	private Integer buildingId;
-	private Integer buildingCount;
-	private String buildingName;
-	private List<Integer> userIds;
+    private String name;
 
-	public Integer getId() {
-		return id;
-	}
+    private String tel;
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
+    private String address;
 
-	public String getLoginName() {
-		return loginName;
-	}
+    private String mail;
 
-	public void setLoginName(String loginName) {
-		this.loginName = loginName;
-	}
+    private String sex;
 
-	public String getName() {
-		return name;
-	}
+    private Date birthday;
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    private String position;
 
-	public String getPassword() {
-		return password;
-	}
+    private String job;
 
-	public void setPassword(String password) {
-		this.password = password;
-	}
+    private String password;
 
-	public String getTel() {
-		return tel;
-	}
+    public Integer getId() {
+        return id;
+    }
 
-	public void setTel(String tel) {
-		this.tel = tel;
-	}
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-	public String getCreateTime() {
-		return createTime;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setCreateTime(String createTime) {
-		this.createTime = createTime;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public Integer getState() {
-		return state;
-	}
+    public String getTel() {
+        return tel;
+    }
 
-	public void setState(Integer state) {
-		this.state = state;
-	}
+    public void setTel(String tel) {
+        this.tel = tel;
+    }
 
-	public Integer getType() {
-		return type;
-	}
+    public String getAddress() {
+        return address;
+    }
 
-	public void setType(Integer type) {
-		this.type = type;
-	}
+    public void setAddress(String address) {
+        this.address = address;
+    }
 
-	public String getEmail() {
-		return email;
-	}
+    public String getMail() {
+        return mail;
+    }
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
+    public void setMail(String mail) {
+        this.mail = mail;
+    }
 
-	public Integer getCreateId() {
-		return createId;
-	}
+    public String getSex() {
+        return sex;
+    }
 
-	public void setCreateId(Integer createId) {
-		this.createId = createId;
-	}
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
 
-	public Integer getBuildingId() {
-		return buildingId;
-	}
+    public Date getBirthday() {
+        return birthday;
+    }
 
-	public void setBuildingId(Integer buildingId) {
-		this.buildingId = buildingId;
-	}
+    public void setBirthday(Date birthday) {
+        this.birthday = birthday;
+    }
 
-	public List<Integer> getUserIds() {
-		return userIds;
-	}
+    public String getPosition() {
+        return position;
+    }
 
-	public void setUserIds(List<Integer> userIds) {
-		this.userIds = userIds;
-	}
+    public void setPosition(String position) {
+        this.position = position;
+    }
 
-	public String getBuildingName() {
-		return buildingName;
-	}
+    public String getJob() {
+        return job;
+    }
 
-	public void setBuildingName(String buildingName) {
-		this.buildingName = buildingName;
-	}
+    public void setJob(String job) {
+        this.job = job;
+    }
 
-	public Integer getBuildingCount() {
-		return buildingCount;
-	}
+    public String getPassword() {
+        return password;
+    }
 
-	public void setBuildingCount(Integer buildingCount) {
-		this.buildingCount = buildingCount;
-	}
+    public void setPassword(String password) {
+        this.password = password;
+    }
 }

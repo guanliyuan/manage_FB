@@ -10,7 +10,9 @@
     <context id="MysqlTables" targetRuntime="MyBatis3">
 
         <!-- 注意这里面的顺序确定的，不能随变更改 -->
-        <!-- 自定义的分页插件 <plugin type="com.deppon.foss.module.helloworld.shared.PaginationPlugin"/> -->
+         <!--自定义的分页插件 -->
+        <!--<plugin type="com.deppon.foss.module.helloworld.shared.PaginationPlugin"/> -->
+        <!--<plugin type="com.FBmanage.ibs.model"/>-->
 
         <!-- 可选的（0 or 1） -->
         <!-- 注释生成器 -->
@@ -60,9 +62,6 @@
                  &lt;!&ndash;//无论字段是什么类型，生成的类属性都是varchar。 可选的（0 or 1） 测试无效 &ndash;&gt;
                  &lt;!&ndash; <columnOverride column="city_code" jdbcType="VARCHAR" /> &ndash;&gt;
              </table>-->
-
-
-
 
     </context>
 </generatorConfiguration>

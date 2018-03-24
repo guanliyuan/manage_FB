@@ -66,8 +66,8 @@ public class UserController {
 	 */
 	@RequestMapping("/IndexUser")
 	public String IndexUser(Integer id, HttpSession session) {
-		/*User user = userService.selectUserById(id);
-		session.setAttribute("user", user);*/
+		User user = userService.selectUserById(id);
+		session.setAttribute("user", user);
 		return "html/HomePage";
 	}
 
@@ -105,7 +105,7 @@ public class UserController {
 			return loginReturn("/login.jsp", "用户名或密码错误", request);
 		}
 		// 验证密码
-		String md5Pass = MD5.getMD5(password);
+	/*	String md5Pass = MD5.getMD5(password);
 		if (md5Pass.equals(user.getPassword())) {
 			int typeUser = user.getType();
 			if (user.getName() == null || "".equals(user.getName())) {
@@ -118,7 +118,7 @@ public class UserController {
 
 		} else {
 			return loginReturn("/login.jsp", "用户名或密码错误", request);
-		}
+		}*/
 		// return "buildings-list";
 		return "html/HomePage";
 	}
