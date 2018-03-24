@@ -1,8 +1,11 @@
 package com.FBmanage.ibs.model;
 
 import java.util.Date;
+import java.util.SortedMap;
+import java.util.TreeMap;
 
 public class User {
+    SortedMap<String, Object> finalpackage = new TreeMap<String, Object>();
     private Integer id;
 
     private String name;
