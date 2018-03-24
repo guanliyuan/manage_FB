@@ -66,9 +66,9 @@ public class UserController {
 	 */
 	@RequestMapping("/IndexUser")
 	public String IndexUser(Integer id, HttpSession session) {
-		User user = userService.selectUserById(id);
-		session.setAttribute("user", user);
-		return "SysUser/indexUser";
+		/*User user = userService.selectUserById(id);
+		session.setAttribute("user", user);*/
+		return "html/HomePage";
 	}
 
 	/**
@@ -85,7 +85,7 @@ public class UserController {
 	@WriteLog(desc="登录")
 	public String login(String userName, String password, String captcha,
 			HttpServletRequest request) {
-		if (userName == null || "".equals(userName.trim())) {
+		/*if (userName == null || "".equals(userName.trim())) {
 			return loginReturn("/login.jsp", "用户名为空", request);
 		}
 		if (password == null || "".equals(password.trim())) {
@@ -113,14 +113,14 @@ public class UserController {
 			}
 			request.getSession().setAttribute(Constant.SESSION_USER_INFO, user);
 			if (typeUser == 2) {
-				return "mybulidingList";
+				return "html/HomePage";
 			}
 
 		} else {
 			return loginReturn("/login.jsp", "用户名或密码错误", request);
-		}
+		}*/
 		// return "buildings-list";
-		return "main_sys";
+		return "html/HomePage";
 	}
 
 	/**

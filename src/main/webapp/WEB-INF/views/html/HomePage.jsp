@@ -1,5 +1,7 @@
-<!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/html">
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-compatibla" content="IE=edge,chrome=1">
@@ -530,6 +532,57 @@
         })
         $("#four").click(function () {
             $(".d4").toggle(true);
+
+            //社保信息
+            $.ajax({
+                url:' https://www.easy-mock.com/mock/5ab3503e4054bc1afa9e733d/example/home/homes',
+                type:'post',
+                success:function (data) {
+                    console.log(data);
+                    var data=data.lists;
+                    for(var i=0;i<data.length;i++){
+                        CreateTr(data[i])
+                    }
+                }
+            });
+
+            function CreateTr(info){
+                var tpl = $("#template").html();
+                tpl=tpl.replace('{{age}}',info.age).
+                replace('{{name}}',info.name).
+                replace('{{number}}',info.number).
+                replace('{{price}}',info.price).
+                replace('{{sex}}',info.sex)
+                $(".tb2 tbody").append(tpl)
+            }
+            //历史发放信息
+            $.ajax({
+                url:' https://www.easy-mock.com/mock/5ab3503e4054bc1afa9e733d/example/wage/wages',
+                type:'post',
+                success:function (data) {
+                    console.log(data);
+                    var data=data.lists;
+                    for(var i=0;i<data.length;i++){
+                        CreateTr_2(data[i])
+                    }
+                }
+            });
+            function CreateTr_2(info){
+                var tp2 = $("#template_2").html();
+                tp2=tp2.replace('{{time}}',info.time).
+                replace('{{wage}}',info.wage).
+                replace('{{reward}}',info.reward).
+                replace('{{Shouldpay}}',info.Shouldpay).
+                replace('{{security}}',info.security).
+                replace('{{Individual}}',info.Individual).
+                replace('{{Realwages}}',info.Realwages)
+
+
+                $(".wages tbody").append(tp2)
+            }
+
+
+
             $(".d1,.d2,.d3,.d6").hide();
 
         })
