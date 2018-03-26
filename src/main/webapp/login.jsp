@@ -139,8 +139,8 @@
         <div class="lg"></div>
         <p class="p1">泛贝&nbsp;OA&nbsp;系统登录</p>
         <p class="p2">FANBEI&nbsp;&nbsp;OA&nbsp;&nbsp;LOGN&nbsp;&nbsp;SYSTEM</p>
-        <input id="account" type="text" name="" value="" placeholder="输入登录账号" required="required">
-        <input id="pwd" type="password" name="" value="" placeholder="请输入密码" required="required">
+        <input id="account" type="text" name="tel" value="" placeholder="输入登录账号" required="required">
+        <input id="pwd" type="password" name="password" value="" placeholder="请输入密码" required="required">
         <p class="p3"><a href="#">忘记密码请联系管理员</a></p>
         <div id="ts"></div>
         <button type="submit">完成</button>

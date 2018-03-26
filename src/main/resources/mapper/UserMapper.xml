@@ -22,7 +22,13 @@
     from user
     where id = #{id,jdbcType=INTEGER}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <select id="selectByTel" resultType="com.FBmanage.ibs.model.User">
+        select
+        <include refid="Base_Column_List" />
+        from user
+        where job = #{job}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from user
     where id = #{id,jdbcType=INTEGER}
   </delete>

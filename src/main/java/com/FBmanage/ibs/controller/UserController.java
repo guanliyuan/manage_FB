@@ -74,7 +74,7 @@ public class UserController {
 	/**
 	 * 登录
 	 * 
-	 * @param userName
+	 * @param tel
 	 * @param password
 	 * @param captcha
 	 * @param request
@@ -83,15 +83,15 @@ public class UserController {
 
 	@RequestMapping("/login")
 	@WriteLog(desc="登录")
-	public String login(String userName, String password, String captcha,
+	public String login(String job, String password, String captcha,
 			HttpServletRequest request) {
-		if (userName == null || "".equals(userName.trim())) {
+		if (job == null || "".equals(job.trim()) || job.length() != 6) {
 			return loginReturn("/login.jsp", "用户名为空", request);
 		}
 		if (password == null || "".equals(password.trim())) {
 			return loginReturn("/login.jsp", "登录密码为空", request);
 		}
-		if (captcha == null || "".equals(captcha.trim())) {
+	/*	if (captcha == null || "".equals(captcha.trim())) {
 			return loginReturn("/login.jsp", "验证码为空", request);
 		}
 		// 验证验证码是否正确
@@ -99,26 +99,26 @@ public class UserController {
 				Constant.SESSION_CAPTCHA);
 		if (!captcha.equals(sessionCaptcha)) {
 			return loginReturn("/login.jsp", "验证码错误", request);
-		}
-		User user = userService.selectUserByLoginName(userName);
+		}*/
+		User user = userService.selectUserByLoginName(job);
 		if (user == null) {
 			return loginReturn("/login.jsp", "用户名或密码错误", request);
 		}
 		// 验证密码
-	/*	String md5Pass = MD5.getMD5(password);
+		String md5Pass = MD5.getMD5(password);
 		if (md5Pass.equals(user.getPassword())) {
-			int typeUser = user.getType();
+		/*	int typeUser = user.getType();
 			if (user.getName() == null || "".equals(user.getName())) {
 				user.setName(user.getLoginName());
-			}
+			}*/
 			request.getSession().setAttribute(Constant.SESSION_USER_INFO, user);
-			if (typeUser == 2) {
+			/*if (typeUser == 2) {
 				return "html/HomePage";
-			}
+			}*/
 
 		} else {
 			return loginReturn("/login.jsp", "用户名或密码错误", request);
-		}*/
+		}
 		// return "buildings-list";
 		return "html/HomePage";
 	}

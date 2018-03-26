@@ -5,6 +5,8 @@ import com.FBmanage.common.cache.ICacheManager;
 import org.apache.log4j.Logger;
 import org.junit.Test;
 
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
 public class TestCache {
@@ -33,10 +35,10 @@ public class TestCache {
     /**
      * 测试线程安全
      */
-   /* @Test
+    @Test
     public void testThredSafe() {
         final String key = "thread";
-        final CacheManagerImpl cacheManagerImpl = new CacheManagerImpl();
+        final ICacheManager cacheManagerImpl = new ICacheManager();
         ExecutorService exec = Executors.newCachedThreadPool();
         for (int i = 0; i < 100; i++) {
             exec.execute(new Runnable() {
@@ -61,5 +63,5 @@ public class TestCache {
         }
 
         logger.info(cacheManagerImpl.getCacheDataByKey(key).toString());
-    }*/
+    }
 }

@@ -9,9 +9,9 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class UserServiceImpl implements UserService {
-//
-//    @Autowired
-//    private UserMapper userMapper;
+
+    @Autowired
+    private UserMapper userMapper;
 
     @Override
     public int deleteByPrimaryKey(Integer id) {
@@ -30,8 +30,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User selectUserByLoginName(String loginName) {
-        return null;
+    public User selectUserByLoginName(String job) {
+        return userMapper.selectByTel(job);
     }
 
     @Override

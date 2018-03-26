@@ -523,6 +523,30 @@
         })
         $("#two").click(function () {
             $(".d2").toggle(true);
+            //基础信息
+            $.ajax({
+                url:' https://www.easy-mock.com/mock/5ab3503e4054bc1afa9e733d/example/home/homes',
+                type:'post',
+                success:function (data) {
+                    console.log(data);
+                    var data=data.lists;
+                    for(var i=0;i<data.length;i++){
+                        CreateTr(data[i])
+                    }
+                }
+            });
+
+            function CreateTr(info){
+                var tpl = $("#template").html();
+                tpl=tpl.replace('{{age}}',info.age).
+                replace('{{name}}',info.name).
+                replace('{{number}}',info.number).
+                replace('{{price}}',info.price).
+                replace('{{sex}}',info.sex)
+                $(".tb2 tbody").append(tpl)
+            }
+
+
             $(".d1,.d3,.d4,.d6").hide();
         })
         $("#three").click(function () {
@@ -577,11 +601,8 @@
                 replace('{{Individual}}',info.Individual).
                 replace('{{Realwages}}',info.Realwages)
 
-
                 $(".wages tbody").append(tp2)
             }
-
-
 
             $(".d1,.d2,.d3,.d6").hide();
 

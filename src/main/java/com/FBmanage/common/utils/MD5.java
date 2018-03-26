@@ -49,4 +49,12 @@ public final class MD5 {
 		return getMD5(source).substring(8, 24);
 
 	}
+
+
+    public static void main(String[] args) {
+       String s = getMD5("benson159");
+        System.out.println(s);   //1a2a28a0c9d4852a9018a31244f1049d
+    }
+
+
 }

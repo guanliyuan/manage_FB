@@ -26,7 +26,6 @@ public class MiaoDiSmsSender implements SmsSender {
         try{
             SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");
             String timestamp = sdf.format(new Date());
-//            String sig = MD5Util.getMD5(Constants.MDSMS_ACCOUNT_SID+Constants.REQUEST_AUTH_TOKEN+timestamp);
             String url = Constants.REQUEST_REST_URL+operation;
             String paramsMsg = "您好，您的注册密码是："+Code+"。 \n" +
                     "请牢记密码哦!";   //在一分钟内输入，验证码会在一分钟后过期

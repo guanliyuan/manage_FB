@@ -13,10 +13,10 @@ public interface UserService {
 
 	/**
 	 * 登录 检查用户名
-	 * @param loginName
+	 * @param job
 	 * @return
 	 */
-	User selectUserByLoginName(String loginName);
+	User selectUserByLoginName(String job);
 
 	int updateUserInfo(User user);
 
